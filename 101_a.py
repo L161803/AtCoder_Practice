@@ -1,0 +1,10 @@
+S = list(input().split())
+ans = 0
+
+for i in S:
+    if i == "+":
+        ans+=1
+    else:
+        ans-=1
+
+print(ans)
