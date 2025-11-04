@@ -13,4 +13,4 @@ for i in range(N+1):
 
     a.append(a[i-1]+tmp)
 
-print(sum(a))
+print()
