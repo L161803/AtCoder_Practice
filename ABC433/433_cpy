@@ -1,0 +1,34 @@
+def solve():
+    S = input().strip()
+    if not S:
+        print(0)
+        return
+    
+    rle = []
+    
+    current_num = int(S[0])
+    count = 1
+    
+    for i in range(1, len(S)):
+        next_num = int(S[i])
+        if next_num == current_num:
+            count += 1
+        else:
+            rle.append((current_num, count))
+            current_num = next_num
+            count = 1
+    rle.append((current_num, count))
+
+    ans = 0
+    for i in range(len(rle) - 1):
+        num1, cnt1 = rle[i]
+        num2, cnt2 = rle[i+1]
+
+        # 条件: 2つ目の数字が 1つ目の数字 + 1 であること
+        if num2 == num1 + 1:
+            ans += min(cnt1, cnt2)
+
+    print(ans)
+
+if __name__ == "__main__":
+    solve()
