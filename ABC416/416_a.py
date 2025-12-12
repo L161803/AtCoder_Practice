@@ -1,4 +1,9 @@
-n, l, r = map(int, input().split())
-s = list(input())
-tmp = s[l-1:r]
-print("Yes" if all(i=="o" for i in tmp) else "No")
+N, L, R = map(int, input().split())
+S = list(input())
+
+flag = True
+for i in range(L-1,R):
+    if S[i] == "x":
+        flag = False
+
+print("Yes" if flag else "No")
